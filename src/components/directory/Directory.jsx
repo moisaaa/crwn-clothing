@@ -30,11 +30,13 @@ const Directory = () => {
   ];
 
   return (
-    <div className="container flex gap-6 min-w-full flex-wrap justify-center items-center">
-      {categories.map((category) => {
-        return <Category category={category} />;
-      })}
-    </div>
+    <>
+      <div className="container flex gap-6 min-w-full flex-wrap justify-center items-center">
+        {categories.map((category) => {
+          return <Category key={category.id} category={category} />;
+        })}
+      </div>
+    </>
   );
 };
 
