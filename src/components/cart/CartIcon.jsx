@@ -1,10 +1,18 @@
 import { ReactComponent as CartIconSvg } from '../../assets/shopping-bag.svg';
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 const CartIcon = () => {
+  const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
-    <div className="flex items-center gap-1">
+    <div onClick={toggleCart} className="relative">
       <CartIconSvg className="h-8 w-8" />
-      <span>0</span>
+      <span className="absolute top-2 right-3">{cartCount}</span>
     </div>
   );
 };
