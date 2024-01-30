@@ -22,9 +22,8 @@ const SignInWMail = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { user } = await signInWEmail(email, password);
+      await signInWEmail(email, password);
       resetForm();
-      console.log(user);
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':

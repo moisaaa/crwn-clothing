@@ -12,6 +12,7 @@ const SignInWGoogleButton = () => {
       console.log('Could not sign in:', error);
     }
   };
+
   return (
     <button
       onClick={logGoogleUser}
