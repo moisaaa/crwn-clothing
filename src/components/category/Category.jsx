@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
+
 const Category = ({ category }) => {
-  const { id, title, imageUrl } = category;
+  const nav = useNavigate();
+  const { id, title, imageUrl, route } = category;
+
+  const onNavigateHandler = () => nav(route);
+
   return (
     <div
       key={id}
+      onClick={onNavigateHandler}
       className="category border-4 border-gray-700 flex items-center justify-center p-24 w-1/4 hover:scale-105 transition"
       style={{
         backgroundImage: `url(${imageUrl})`,
