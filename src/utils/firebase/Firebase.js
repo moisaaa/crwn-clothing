@@ -71,7 +71,6 @@ export const getCategoriesAndDocuments = async () => {
 export const createUserDoc = async (userAuth, additionalInformation = {}) => {
   if (!userAuth) return;
   const userDoc = doc(db, 'users', userAuth.uid);
-  console.log(userAuth);
   const userSnapshot = await getDoc(userDoc);
 
   if (!userSnapshot.exists()) {
